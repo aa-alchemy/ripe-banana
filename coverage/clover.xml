@@ -1,79 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1569535953250" clover="3.2.0">
-  <project timestamp="1569535953250" name="All files">
-    <metrics statements="92" coveredstatements="61" conditionals="13" coveredconditionals="2" methods="17" coveredmethods="4" elements="122" coveredelements="67" complexity="0" loc="92" ncloc="92" packages="4" files="11" classes="11"/>
+<coverage generated="1569537760271" clover="3.2.0">
+  <project timestamp="1569537760271" name="All files">
+    <metrics statements="89" coveredstatements="61" conditionals="15" coveredconditionals="3" methods="21" coveredmethods="11" elements="125" coveredelements="75" complexity="0" loc="89" ncloc="89" packages="5" files="10" classes="10"/>
     <package name="e2e">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="request.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/e2e/request.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="db.js" path="/Users/antonella/alchemy/career-track/ripe-banana/e2e/db.js">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="request.js" path="/Users/antonella/alchemy/career-track/ripe-banana/e2e/request.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
     </package>
     <package name="lib">
-      <metrics statements="35" coveredstatements="23" conditionals="5" coveredconditionals="1" methods="7" coveredmethods="2"/>
-      <file name="app.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/app.js">
-        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
+      <metrics statements="37" coveredstatements="25" conditionals="5" coveredconditionals="1" methods="7" coveredmethods="2"/>
+      <file name="app.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/app.js">
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
       </file>
-      <file name="connect.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/connect.js">
+      <file name="connect.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/connect.js">
         <metrics statements="20" coveredstatements="8" conditionals="5" coveredconditionals="1" methods="6" coveredmethods="1"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="18" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="20" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="20" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="21" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="35" count="4" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
       </file>
     </package>
     <package name="lib.middleware">
       <metrics statements="20" coveredstatements="8" conditionals="8" coveredconditionals="1" methods="3" coveredmethods="2"/>
-      <file name="api-404.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/middleware/api-404.js">
+      <file name="api-404.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/middleware/api-404.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
       </file>
-      <file name="check-connection.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/middleware/check-connection.js">
+      <file name="check-connection.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/middleware/check-connection.js">
         <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
       </file>
-      <file name="error-handler.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/middleware/error-handler.js">
+      <file name="error-handler.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/middleware/error-handler.js">
         <metrics statements="12" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="9" count="0" type="cond" truecount="0" falsecount="4"/>
@@ -88,55 +97,43 @@
       </file>
     </package>
     <package name="lib.models">
-      <metrics statements="34" coveredstatements="27" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
-      <file name="register-plugins.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/models/register-plugins.js">
-        <metrics statements="15" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+      <metrics statements="19" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="3"/>
+      <file name="register-plugins.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/models/register-plugins.js">
+        <metrics statements="15" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
       </file>
-      <file name="studio.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/models/studio.js">
+      <file name="studio.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/models/studio.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
       </file>
-      <file name="temp-location.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/models/temp-location.js">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-      </file>
-      <file name="temp-required-types.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/models/temp-required-types.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-      </file>
-      <file name="temp-show.js" path="/Users/alexjonspencer/alchemy/career-track/labs/ripe-banana/lib/models/temp-show.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+    </package>
+    <package name="lib.routes">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="studios.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/routes/studios.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
       </file>
     </package>
   </project>
