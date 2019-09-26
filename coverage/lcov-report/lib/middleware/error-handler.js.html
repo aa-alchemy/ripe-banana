@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for lib/models/temp-location.js</title>
+    <title>Code coverage report for lib/middleware/error-handler.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,35 +16,35 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">lib/models</a> temp-location.js
+      <a href="../../index.html">All files</a> / <a href="index.html">lib/middleware</a> error-handler.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">8.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>1/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">8.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>1/12</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -72,59 +72,71 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const mongoose = require('mongoose');
-const { Schema } = mongoose;
-const { ObjectId } = Schema.Types;
-const { RequiredString, RequiredDate } = require('./temp-required-types');
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// we *must* include all four params for express 
+// to know this is an error handling middleware
+// eslint-disable-next-line no-unused-vars
+module.exports = <span class="fstat-no" title="function not covered" >(e</span>rr, req, res, next) =&gt; {
+  let statusCode = <span class="cstat-no" title="statement not covered" >500;</span>
+  let error = <span class="cstat-no" title="statement not covered" >'Internal Server Error';</span>
 &nbsp;
-const schema = new Schema({
-  name: RequiredString,
-  address: {
-    street: RequiredString,
-    city: RequiredString,
-    state: {
-      ...RequiredString,
-      enum: ['OR', 'WA', 'CA']
-    },
-    zip: RequiredString
-  },
-  shows: [{
-    show: {
-      type: ObjectId,
-      ref: 'Show',
-      required: true
-    },
-    date: RequiredDate
-  }]
-});
+  // Mongoose Validation Error?
+<span class="cstat-no" title="statement not covered" >  if(err.name === 'ValidationError' || err.name === 'CastError') {</span>
+<span class="cstat-no" title="statement not covered" >    statusCode = 400;</span>
+<span class="cstat-no" title="statement not covered" >    error = err.message;</span>
+  }
+  // is this one of our errors?
+  else <span class="cstat-no" title="statement not covered" >if(err.statusCode) {</span>
+    // by convention, we're passing in an object
+    // with a statusCode property for http statusCode
+    // and a error property for message to display
+<span class="cstat-no" title="statement not covered" >    statusCode = err.statusCode;</span>
+<span class="cstat-no" title="statement not covered" >    error = err.error;</span>
+  }
+  // or something unexpected?
+  else {
+    // log actual error
+<span class="cstat-no" title="statement not covered" >    console.log('UNEXPECTED ERROR', err);</span>
+  }
 &nbsp;
-module.exports = mongoose.model('Location', schema);</pre></td></tr>
+  // if you want to see all errors in log, uncomment:
+<span class="cstat-no" title="statement not covered" >  console.log('ERROR', statusCode, error);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  res.status(statusCode).send({ error });</span>
+};</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
