@@ -58,4 +58,33 @@ describe('studio api', () =>{
         });
       });
   });
+
+  it('gets studio by id', () => {
+    return postStudio(aa2Studio)
+      .then(studio => {
+        return request
+          .get(`/api/studios/${studio._id}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body).toEqual(studio);
+          });
+      });
+  });
+
+  it('deletes studio', () => {
+    return postStudio(aa2Studio)
+      .then(studio => {
+        return request
+          .delete(`/api/studios/${studio._id}`)
+          .expect(200);
+      })
+      .then(() => {
+        return request
+          .get(`/api/studios/${studio._id}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body.length).toBe(0);
+          });
+      });
+  });
 });

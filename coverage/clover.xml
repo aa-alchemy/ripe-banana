@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1569537760271" clover="3.2.0">
-  <project timestamp="1569537760271" name="All files">
-    <metrics statements="89" coveredstatements="61" conditionals="15" coveredconditionals="3" methods="21" coveredmethods="11" elements="125" coveredelements="75" complexity="0" loc="89" ncloc="89" packages="5" files="10" classes="10"/>
+<coverage generated="1569540803763" clover="3.2.0">
+  <project timestamp="1569540803763" name="All files">
+    <metrics statements="95" coveredstatements="65" conditionals="15" coveredconditionals="3" methods="27" coveredmethods="15" elements="137" coveredelements="83" complexity="0" loc="95" ncloc="95" packages="5" files="10" classes="10"/>
     <package name="e2e">
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="db.js" path="/Users/antonella/alchemy/career-track/ripe-banana/e2e/db.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
         <line num="7" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
       <file name="request.js" path="/Users/antonella/alchemy/career-track/ripe-banana/e2e/request.js">
@@ -69,16 +69,16 @@
       <file name="api-404.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/middleware/api-404.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
       </file>
       <file name="check-connection.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/middleware/check-connection.js">
         <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="5" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="12" type="cond" truecount="1" falsecount="1"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
       </file>
       <file name="error-handler.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/middleware/error-handler.js">
         <metrics statements="12" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -125,15 +125,21 @@
       </file>
     </package>
     <package name="lib.routes">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="6"/>
       <file name="studios.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/routes/studios.js">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="6"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
       </file>
     </package>
   </project>
