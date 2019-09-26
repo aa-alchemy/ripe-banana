@@ -80,7 +80,7 @@ describe('studio api', () =>{
       })
       .then(() => {
         return request
-          .get(`/api/studios/${studio._id}`)
+          .get('/api/studios')
           .expect(200)
           .then(({ body }) => {
             expect(body.length).toBe(0);
