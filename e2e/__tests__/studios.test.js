@@ -33,4 +33,29 @@ describe('studio api', () =>{
         });
       });
   });
+  it('it gets all studios', () => {
+    return Promise.all([
+      postStudio(aa2Studio),
+      postStudio(aa2Studio),
+      postStudio(aa2Studio)
+    ])
+      .then(() => {
+        return request 
+          .get('/api/studios')
+          .expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.length).toBe(3);
+        expect(body[0]).toEqual({
+          _id: expect.any(String),
+          name: aa2Studio.name,
+          __v: 0,
+          address: {
+            city: aa2Studio.address.city,
+            state: aa2Studio.address.state,
+            country: aa2Studio.address.country
+          }
+        });
+      });
+  });
 });
