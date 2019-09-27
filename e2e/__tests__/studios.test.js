@@ -1,7 +1,7 @@
 const request = require('../request');
 const db = require('../db');
 
-describe('studio api', () =>{
+describe('studio api', () => {
   beforeEach(() => {
     return db.dropCollection('studios');
   });
