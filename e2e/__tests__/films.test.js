@@ -1,4 +1,5 @@
 const request = require('../request');
+const mongoose = require('mongoose');
 const db = require('../db');
 
 describe('film api', () => {
@@ -47,7 +48,7 @@ describe('film api', () => {
   it('posts a film', () => {
     return postFilm(aa2Film)
       .then(film => {
-        expect(film).toMatchInLineSnapshot();
+        expect(film).toMatchInlineSnapshot();
       });
   });
 
