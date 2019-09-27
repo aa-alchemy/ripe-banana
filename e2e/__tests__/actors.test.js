@@ -30,7 +30,7 @@ describe('actor api', () => {
       });
   });
 
-  it('gets an actor', () => {
+  it('gets all actors', () => {
     return Promise.all([
       postActor(aa2Actor),
       postActor(aa2Actor),

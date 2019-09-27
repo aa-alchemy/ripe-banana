@@ -1,5 +1,4 @@
 const request = require('../request');
-const mongoose = require('mongoose');
 const db = require('../db');
 
 describe('film api', () => {
@@ -77,7 +76,7 @@ describe('film api', () => {
           "_id": Any<String>,
           "cast": Array [
             Object {
-              "_id": "5d8e7f8cec4e97f54c0431ad",
+              "_id": "5d8e87a3d4aafaa55f3f5ebf",
               "actor": Any<String>,
               "role": "Lead Alchemist",
             },
@@ -90,4 +89,31 @@ describe('film api', () => {
       );
     });
   });
+  it('gets all films', () => {
+    return Promise.all([
+      postFilm(aa2Film),
+      postFilm(aa2Film),
+      postFilm(aa2Film)
+    ])
+      .then(() => {
+        return request.get('/api/films').expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.length).toBe(3);
+      });
+  });
+  it('gets film by its id', () => {
+    return postFilm(aa2Film).then(film => {
+      return request
+        .get(`/api/films/${film._id}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body).toEqual(film);
+        });
+    });
+  });
+  it('finds by id and deletes', () => {
+    return postFilm(aa2Film)
+    
+  })
 });
