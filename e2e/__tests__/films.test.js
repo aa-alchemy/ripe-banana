@@ -61,22 +61,33 @@ describe('film api', () => {
 
   it('posts a film', () => {
     return postFilm(aa2Film).then(film => {
-      expect(film).toMatchInlineSnapshot(`
+      expect(film).toMatchInlineSnapshot(
+        {
+          _id: expect.any(String),
+          studio: expect.any(String),
+          cast: [
+            {
+              actor: expect.any(String)
+            }
+          ]
+        },
+        `
         Object {
           "__v": 0,
-          "_id": "5d8e7ca53c90f5a0a2564052",
+          "_id": Any<String>,
           "cast": Array [
             Object {
-              "_id": "5d8e7ca53c90f5a0a2564053",
-              "actor": "5d8e7ca53c90f5a0a2564051",
+              "_id": "5d8e7f8cec4e97f54c0431ad",
+              "actor": Any<String>,
               "role": "Lead Alchemist",
             },
           ],
           "released": 2019,
-          "studio": "5d8e7ca53c90f5a0a2564050",
+          "studio": Any<String>,
           "title": "AA2 Alchemist",
         }
-      `);
+      `
+      );
     });
   });
 });
