@@ -30,4 +30,46 @@ describe('actor api', () => {
       });
   });
 
+  it('gets an actor', () => {
+    return Promise.all([
+      postActor(aa2Actor),
+      postActor(aa2Actor),
+      postActor(aa2Actor)
+    ])
+      .then(() => {
+        return request
+          .get('/api/actors')
+          .expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.length).toBe(3);
+        expect(body[0]).toEqual({
+          _id: expect.any(String),
+          __v: 0,
+          ...aa2Actor
+        });
+      });
+  });
+
+  it('gets actor by id', () => {
+    return postActor(aa2Actor)
+      .then(actor => {
+        return request
+          .get(`/api/actors/${actor._id}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body).toEqual(actor);
+          });
+      });
+  });
+
+  it('deletes an actor', () => {
+    return postActor(aa2Actor)
+      .then(actor => {
+        return request
+          .delete(`/api/actors/${actor._id}`)
+          .expect(200);
+      });
+  });
+
 });
