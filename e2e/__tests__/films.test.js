@@ -76,7 +76,7 @@ describe('film api', () => {
           "_id": Any<String>,
           "cast": Array [
             Object {
-              "_id": "5d8e87a3d4aafaa55f3f5ebf",
+              "_id": "5d8e8caef4afd2fd6779bc7d",
               "actor": Any<String>,
               "role": "Lead Alchemist",
             },
@@ -114,6 +114,16 @@ describe('film api', () => {
   });
   it('finds by id and deletes', () => {
     return postFilm(aa2Film)
-    
-  })
+      .then(film => {
+        return request.delete(`/api/films/${film._id}`).expect(200);
+      })
+      .then(() => {
+        return request
+          .get('/api/films')
+          .expect(200)
+          .then(({ body }) => {
+            expect(body.length).toBe(0);
+          });
+      });
+  });
 });
