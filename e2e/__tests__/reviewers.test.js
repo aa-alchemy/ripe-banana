@@ -58,6 +58,20 @@ describe('reviewer api', () => {
       });
   });
 
+  it('modifies the reviewer', () => {
+    return postReviewer(aa2Reviewer)
+      .then(reviewer => {
+        reviewer.name = 'this has changed!';
+        return request
+          .put(`/api/reviewers/${reviewer._id}`)
+          .send(reviewer)
+          .expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.name).toBe('this has changed!');
+      });
+  });
+
   it('finds and deletes by id', () => {
     return postReviewer(aa2Reviewer)
       .then(reviewer => {

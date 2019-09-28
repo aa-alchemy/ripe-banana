@@ -85,18 +85,67 @@ describe('review api', () => {
   }
   it('posts a review', () => {
     return postReview(aa2Review).then(review => {
-      expect(review).toMatchInlineSnapshot({
-        
-      }, `
+      expect(review).toMatchInlineSnapshot(
+        {
+          _id: expect.any(String),
+          film: expect.any(String),
+          reviewer: expect.any(String)
+        },
+        `
         Object {
           "__v": 0,
-          "_id": "5d8ea636cce28c0beb58d650",
-          "film": "5d8ea636cce28c0beb58d64e",
+          "_id": Any<String>,
+          "film": Any<String>,
           "rating": 4,
           "review": "adufhsiodhJLBZXc uogdoubjkadb",
-          "reviewer": "5d8ea636cce28c0beb58d64b",
+          "reviewer": Any<String>,
         }
-      `);
+      `
+      );
     });
+  });
+  it('gets all reviews', () => {
+    return Promise.all([
+      postReview(aa2Review),
+      postReview(aa2Review),
+      postReview(aa2Review)
+    ])
+      .then(() => {
+        return request
+          .get('/api/reviews')
+          .expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.length).toBe(3);
+      });
+  });
+
+  it('gets review by an id', () => {
+    return postReview(aa2Review)
+      .then(review => {
+        return request
+          .get(`/api/reviews/${review._id}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body).toEqual(review);
+          });
+      });
+  });
+
+  it('finds by id and deletes', () => {
+    return postReview(aa2Review)
+      .then(review => {
+        return request 
+          .delete(`/api/reviews/${review._id}`)
+          .expect(200);
+      })
+      .then(() => {
+        return request
+          .get('/api/reviews')
+          .expect(200)
+          .then(({ body }) => {
+            expect(body.length).toBe(0);
+          });
+      });
   });
 });
