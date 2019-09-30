@@ -61,6 +61,7 @@ describe('actor api', () => {
             `
             Object {
               "_id": Any<String>,
+              "films": Array [],
               "name": "Antonella",
               "pob": "Colombia",
             }

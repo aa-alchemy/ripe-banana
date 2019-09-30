@@ -134,9 +134,9 @@ describe('reviewer api', () => {
               "name": "Boss Person",
               "reviews": Array [
                 Object {
-                  "_id": "5d926ac5ebc118ea56910715",
+                  "_id": "5d926f165aef78ecfc7b6a18",
                   "film": Object {
-                    "_id": "5d926ac5ebc118ea56910713",
+                    "_id": "5d926f165aef78ecfc7b6a16",
                     "title": "AA2 Alchemist",
                   },
                   "rating": 4,
