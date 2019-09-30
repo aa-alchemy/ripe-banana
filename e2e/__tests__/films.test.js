@@ -178,10 +178,19 @@ describe('film api', () => {
         .then(({ body }) => {
           expect(body).toMatchInlineSnapshot(
             {
+              _id: expect.any(String),
               cast: [
                 {
                   _id: expect.any(String),
                   actor: {
+                    _id: expect.any(String)
+                  }
+                }
+              ],
+              reviews: [
+                {
+                  _id: expect.any(String),
+                  reviewer: {
                     _id: expect.any(String)
                   }
                 }
@@ -192,7 +201,7 @@ describe('film api', () => {
             },
             `
             Object {
-              "_id": "5d92755ae80e29effcefb68d",
+              "_id": Any<String>,
               "cast": Array [
                 Object {
                   "_id": Any<String>,
@@ -206,11 +215,11 @@ describe('film api', () => {
               "released": 2019,
               "reviews": Array [
                 Object {
-                  "_id": "5d92755ae80e29effcefb68f",
+                  "_id": Any<String>,
                   "rating": 4,
                   "review": "adufhsiodhJLBZXc uogdoubjkadb",
                   "reviewer": Object {
-                    "_id": "5d92755ae80e29effcefb68a",
+                    "_id": Any<String>,
                     "name": "Boss Person",
                   },
                 },
