@@ -125,7 +125,15 @@ describe('reviewer api', () => {
         .then(({ body }) => {
           expect(body).toMatchInlineSnapshot(
             {
-              _id: expect.any(String)
+              _id: expect.any(String),
+              reviews: [
+                {
+                  _id: expect.any(String),
+                  film: {
+                    _id: expect.any(String)
+                  }
+                }
+              ]
             },
             `
             Object {
@@ -134,9 +142,9 @@ describe('reviewer api', () => {
               "name": "Boss Person",
               "reviews": Array [
                 Object {
-                  "_id": "5d9272886d02abee060b1c8e",
+                  "_id": Any<String>,
                   "film": Object {
-                    "_id": "5d9272886d02abee060b1c8c",
+                    "_id": Any<String>,
                     "title": "AA2 Alchemist",
                   },
                   "rating": 4,

@@ -6,18 +6,6 @@ describe('actor api', () => {
     return db.dropCollection('actors');
   });
 
-  const aa2Reviewer = {
-    name: 'Boss Person',
-    company: 'Evil Vampire'
-  };
-
-  const aa2Review = {
-    rating: 4,
-    reviewer: [],
-    review: 'adufhsiodhJLBZXc uogdoubjkadb',
-    film: []
-  };
-
   const aa2Studio = {
     name: 'AA2',
     address: {
@@ -44,41 +32,6 @@ describe('actor api', () => {
     pob: 'Colombia'
   };
 
-  function postReview(aa2Review) {
-    return request
-      .post('/api/reviewers')
-      .send(aa2Reviewer)
-      .expect(200)
-      .then(({ body }) => {
-        aa2Review.reviewer = body._id;
-        return request
-          .post('/api/studios')
-          .send(aa2Studio)
-          .expect(200)
-          .then(({ body }) => {
-            aa2Film.studio[0] = body._id;
-            return request
-              .post('/api/actors')
-              .send(aa2Actor)
-              .expect(200)
-              .then(({ body }) => {
-                aa2Film.cast[0].actor = body._id;
-                return request
-                  .post('/api/films')
-                  .send(aa2Film)
-                  .expect(200)
-                  .then(({ body }) => {
-                    aa2Review.film = body._id;
-                    return request
-                      .post('/api/reviews')
-                      .send(aa2Review)
-                      .expect(200)
-                      .then(({ body }) => body);
-                  });
-              });
-          });
-      });
-  }
   function postActor(actor) {
     return request
       .post('/api/actors')
@@ -139,24 +92,33 @@ describe('actor api', () => {
 
   it('gets actor by id', () => {
     return postFilm(aa2Film).then(film => {
-      console.log(film.cast[0].actor);
       return request
         .get(`/api/actors/${film.cast[0].actor}`)
         .expect(200)
         .then(({ body }) => {
-          expect(body).toMatchInlineSnapshot(`
+          expect(body).toMatchInlineSnapshot(
+            {
+              _id: expect.any(String),
+              films: [
+                {
+                  _id: expect.any(String)
+                }
+              ]
+            },
+            `
             Object {
-              "_id": "5d927289a589fdee06f0d62b",
+              "_id": Any<String>,
               "films": Array [
                 Object {
-                  "_id": "5d927289a589fdee06f0d62c",
+                  "_id": Any<String>,
                   "title": "AA2 Alchemist",
                 },
               ],
               "name": "Antonella",
               "pob": "Colombia",
             }
-          `);
+          `
+          );
         });
     });
   });

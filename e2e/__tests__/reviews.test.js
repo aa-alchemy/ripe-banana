@@ -19,7 +19,7 @@ describe('review api', () => {
     rating: 4,
     reviewer: [],
     review: 'adufhsiodhJLBZXc uogdoubjkadb',
-    film: []
+    film: {}
   };
 
   const aa2Studio = {
@@ -111,9 +111,7 @@ describe('review api', () => {
       postReview(aa2Review)
     ])
       .then(() => {
-        return request
-          .get('/api/reviews')
-          .expect(200);
+        return request.get('/api/reviews').expect(200);
       })
       .then(({ body }) => {
         expect(body.length).toBe(3);
@@ -121,23 +119,33 @@ describe('review api', () => {
   });
 
   it('gets review by an id', () => {
-    return postReview(aa2Review)
-      .then(review => {
-        return request
-          .get(`/api/reviews/${review._id}`)
-          .expect(200)
-          .then(({ body }) => {
-            expect(body).toEqual(review);
-          });
-      });
+    return postReview(aa2Review).then(review => {
+      return request
+        .get(`/api/reviews/${review._id}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body).toMatchInlineSnapshot(
+            {
+              _id: expect.any(String),
+              film: expect.any(String)
+            },
+            `
+            Object {
+              "_id": Any<String>,
+              "film": Any<String>,
+              "rating": 4,
+              "review": "adufhsiodhJLBZXc uogdoubjkadb",
+            }
+          `
+          );
+        });
+    });
   });
 
   it('finds by id and deletes', () => {
     return postReview(aa2Review)
       .then(review => {
-        return request 
-          .delete(`/api/reviews/${review._id}`)
-          .expect(200);
+        return request.delete(`/api/reviews/${review._id}`).expect(200);
       })
       .then(() => {
         return request
