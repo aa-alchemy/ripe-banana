@@ -20,14 +20,13 @@ describe('reviewer api', () => {
   }
 
   it('posts a reviewer', () => {
-    return postReviewer(aa2Reviewer)
-      .then(reviewer => {
-        expect(reviewer).toEqual({
-          _id: expect.any(Object),
-          __v: 0,
-          ...reviewer
-        });
+    return postReviewer(aa2Reviewer).then(reviewer => {
+      expect(reviewer).toEqual({
+        _id: expect.any(Object),
+        __v: 0,
+        ...reviewer
       });
+    });
   });
 
   it('gets all reviewers', () => {
@@ -37,25 +36,32 @@ describe('reviewer api', () => {
       postReviewer(aa2Reviewer)
     ])
       .then(() => {
-        return request
-          .get('/api/reviewers')
-          .expect(200);
+        return request.get('/api/reviewers').expect(200);
       })
       .then(({ body }) => {
         expect(body.length).toBe(3);
+        expect(body[0]).toMatchInlineSnapshot(
+          {},
+          `
+          Object {
+            "_id": "5d923f6817845bd5e87c295c",
+            "company": "Evil Vampire",
+            "name": "Boss Person",
+          }
+        `
+        );
       });
   });
 
   it('gets reviewer by id', () => {
-    return postReviewer(aa2Reviewer)
-      .then(reviewer => {
-        return request
-          .get(`/api/reviewers/${reviewer._id}`)
-          .expect(200)
-          .then(({ body }) => {
-            expect(body).toEqual(reviewer);
-          });
-      });
+    return postReviewer(aa2Reviewer).then(reviewer => {
+      return request
+        .get(`/api/reviewers/${reviewer._id}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body).toEqual(reviewer);
+        });
+    });
   });
 
   it('modifies the reviewer', () => {
@@ -75,9 +81,7 @@ describe('reviewer api', () => {
   it('finds and deletes by id', () => {
     return postReviewer(aa2Reviewer)
       .then(reviewer => {
-        return request
-          .delete(`/api/reviewers/${reviewer._id}`)
-          .expect(200);
+        return request.delete(`/api/reviewers/${reviewer._id}`).expect(200);
       })
       .then(() => {
         return request
@@ -89,6 +93,3 @@ describe('reviewer api', () => {
       });
   });
 });
-
-
-
