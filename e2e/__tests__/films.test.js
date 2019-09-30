@@ -101,7 +101,25 @@ describe('film api', () => {
       })
       .then(({ body }) => {
         expect(body.length).toBe(3);
-        // expect(body[0]).toEqual({});
+        expect(body[0]).toMatchInlineSnapshot(
+          {
+            _id: expect.any(String),
+            studio: {
+              _id: expect.any(String)
+            }
+          },
+          `
+          Object {
+            "_id": Any<String>,
+            "released": 2019,
+            "studio": Object {
+              "_id": Any<String>,
+              "name": "AA2",
+            },
+            "title": "AA2 Alchemist",
+          }
+        `
+        );
       });
   });
   it('gets film by its id', () => {
@@ -110,7 +128,32 @@ describe('film api', () => {
         .get(`/api/films/${film._id}`)
         .expect(200)
         .then(({ body }) => {
-          expect(body).toEqual(film);
+          expect(body).toMatchInlineSnapshot(
+            {
+              cast: [
+                {
+                  _id: expect.any(String),
+                  actor: expect.any(String)
+                }
+              ],
+              studio: expect.any(String)
+            },
+            `
+            Object {
+              "cast": Array [
+                Object {
+                  "_id": Any<String>,
+                  "actor": Any<String>,
+                  "role": "Lead Alchemist",
+                },
+              ],
+              "released": 2019,
+              "reviews": Array [],
+              "studio": Any<String>,
+              "title": "AA2 Alchemist",
+            }
+          `
+          );
         });
     });
   });
