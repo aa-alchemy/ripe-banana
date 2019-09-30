@@ -8,7 +8,8 @@ describe('actor api', () => {
 
   const aa2Actor = {
     name: 'Antonella',
-    pob: 'Colombia'
+    pob: 'Colombia',
+    films: []
   };
 
   function postActor(actor) {
@@ -20,14 +21,13 @@ describe('actor api', () => {
   }
 
   it('posts an actor', () => {
-    return postActor(aa2Actor)
-      .then(actor => {
-        expect(actor).toEqual({
-          _id: expect.any(Object),
-          __v: 0,
-          ...actor
-        });
+    return postActor(aa2Actor).then(actor => {
+      expect(actor).toEqual({
+        _id: expect.any(Object),
+        __v: 0,
+        ...actor
       });
+    });
   });
 
   it('gets all actors', () => {
@@ -37,9 +37,7 @@ describe('actor api', () => {
       postActor(aa2Actor)
     ])
       .then(() => {
-        return request
-          .get('/api/actors')
-          .expect(200);
+        return request.get('/api/actors').expect(200);
       })
       .then(({ body }) => {
         expect(body.length).toBe(3);
@@ -51,24 +49,30 @@ describe('actor api', () => {
   });
 
   it('gets actor by id', () => {
-    return postActor(aa2Actor)
-      .then(actor => {
-        return request
-          .get(`/api/actors/${actor._id}`)
-          .expect(200)
-          .then(({ body }) => {
-            expect(body).toEqual(actor);
-          });
-      });
+    return postActor(aa2Actor).then(actor => {
+      return request
+        .get(`/api/actors/${actor._id}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body).toMatchInlineSnapshot(
+            {
+              _id: expect.any(String)
+            },
+            `
+            Object {
+              "_id": Any<String>,
+              "name": "Antonella",
+              "pob": "Colombia",
+            }
+          `
+          );
+        });
+    });
   });
 
   it('deletes an actor', () => {
-    return postActor(aa2Actor)
-      .then(actor => {
-        return request
-          .delete(`/api/actors/${actor._id}`)
-          .expect(200);
-      });
+    return postActor(aa2Actor).then(actor => {
+      return request.delete(`/api/actors/${actor._id}`).expect(200);
+    });
   });
-
 });
