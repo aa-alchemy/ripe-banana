@@ -148,7 +148,6 @@ describe('film api', () => {
                 },
               ],
               "released": 2019,
-              "reviews": Array [],
               "studio": Any<String>,
               "title": "AA2 Alchemist",
             }
