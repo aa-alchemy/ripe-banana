@@ -6,7 +6,7 @@
 
 ### Links and Resources
 * [submission PR](https://github.com/aa-alchemy/ripe-banana/pull/1)
-* [travis](https://travis-ci.com/aa-alchemy/ripe-banana/builds/129527995)
+* [travis](https://travis-ci.com/aa-alchemy/ripe-banana/builds/129771289)
 * [back-end](https://alex-antonella-ripe-banana.herokuapp.com/)
 
 ### Setup
