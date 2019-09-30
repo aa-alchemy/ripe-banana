@@ -101,6 +101,7 @@ describe('film api', () => {
       })
       .then(({ body }) => {
         expect(body.length).toBe(3);
+        // expect(body[0]).toEqual({});
       });
   });
   it('gets film by its id', () => {

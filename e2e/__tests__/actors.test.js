@@ -45,8 +45,7 @@ describe('actor api', () => {
         expect(body.length).toBe(3);
         expect(body[0]).toEqual({
           _id: expect.any(String),
-          __v: 0,
-          ...aa2Actor
+          name: aa2Actor.name
         });
       });
   });
