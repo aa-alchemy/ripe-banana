@@ -55,7 +55,7 @@ describe('studio api', () => {
   it('gets studio by id', () => {
     return postStudio(aa2Studio).then(studio => {
       return request
-        .get(`/api/films`)
+        .post(`/api/films`)
         .send({
           title: 'Testing',
           studio: studio._id,
@@ -69,9 +69,9 @@ describe('studio api', () => {
           expect(body).toMatchInlineSnapshot(
             {
               _id: expect.any(String),
-              films: [
-                { _id: expect.any(String) }
-              ]
+              films: [{
+                _id: expect.any(String) 
+              }]
             },
             `
             Object {
@@ -82,7 +82,12 @@ describe('studio api', () => {
                 "country": "USA",
                 "state": "Oregon",
               },
-              "films": Array [],
+              "films": Array [
+                Object {
+                  "_id": Any<String>,
+                  "title": "Testing",
+                },
+              ],
               "name": "AA2",
             }
           `
