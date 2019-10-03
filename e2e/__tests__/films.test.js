@@ -66,6 +66,7 @@ describe('film api', () => {
           studio: expect.any(String),
           cast: [
             {
+              _id: expect.any(String),
               actor: expect.any(String)
             }
           ]
@@ -76,7 +77,7 @@ describe('film api', () => {
           "_id": Any<String>,
           "cast": Array [
             Object {
-              "_id": "5d8eaa3dba25b7b64ccc7f09",
+              "_id": Any<String>,
               "actor": Any<String>,
               "role": "Lead Alchemist",
             },

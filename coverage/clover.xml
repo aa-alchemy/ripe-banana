@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1569628659284" clover="3.2.0">
-  <project timestamp="1569628659284" name="All files">
-    <metrics statements="161" coveredstatements="131" conditionals="15" coveredconditionals="3" methods="53" coveredmethods="41" elements="229" coveredelements="175" complexity="0" loc="161" ncloc="161" packages="5" files="18" classes="18"/>
+<coverage generated="1570078795945" clover="3.2.0">
+  <project timestamp="1570078795945" name="All files">
+    <metrics statements="169" coveredstatements="141" conditionals="15" coveredconditionals="3" methods="61" coveredmethods="51" elements="245" coveredelements="195" complexity="0" loc="169" ncloc="169" packages="5" files="18" classes="18"/>
     <package name="e2e">
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="db.js" path="/Users/antonella/alchemy/career-track/ripe-banana/e2e/db.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="5" type="stmt"/>
         <line num="3" count="5" type="stmt"/>
-        <line num="5" count="27" type="stmt"/>
-        <line num="7" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="37" type="stmt"/>
+        <line num="7" count="3" type="cond" truecount="1" falsecount="1"/>
       </file>
       <file name="request.js" path="/Users/antonella/alchemy/career-track/ripe-banana/e2e/request.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -84,9 +84,9 @@
         <line num="1" count="6" type="stmt"/>
         <line num="2" count="6" type="stmt"/>
         <line num="4" count="6" type="stmt"/>
-        <line num="5" count="58" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="90" type="cond" truecount="1" falsecount="1"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="11" count="58" type="stmt"/>
+        <line num="11" count="90" type="stmt"/>
       </file>
       <file name="error-handler.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/middleware/error-handler.js">
         <metrics statements="12" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -161,14 +161,14 @@
       </file>
     </package>
     <package name="lib.routes">
-      <metrics statements="54" coveredstatements="52" conditionals="0" coveredconditionals="0" methods="34" coveredmethods="32"/>
+      <metrics statements="62" coveredstatements="62" conditionals="0" coveredconditionals="0" methods="42" coveredmethods="42"/>
       <file name="actors.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/routes/actors.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
         <line num="5" count="6" type="stmt"/>
-        <line num="7" count="13" type="stmt"/>
-        <line num="8" count="13" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
@@ -182,8 +182,8 @@
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
         <line num="5" count="6" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
@@ -193,12 +193,29 @@
         <line num="27" count="6" type="stmt"/>
       </file>
       <file name="reviewers.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/routes/reviewers.js">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+      </file>
+      <file name="reviews.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/routes/reviews.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
         <line num="5" count="6" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
@@ -207,22 +224,13 @@
         <line num="23" count="1" type="stmt"/>
         <line num="27" count="6" type="stmt"/>
       </file>
-      <file name="reviews.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/routes/reviews.js">
-        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="6" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-      </file>
       <file name="studios.js" path="/Users/antonella/alchemy/career-track/ripe-banana/lib/routes/studios.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
         <line num="5" count="6" type="stmt"/>
-        <line num="7" count="13" type="stmt"/>
-        <line num="8" count="13" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
