@@ -89,14 +89,13 @@ describe('reviewer api', () => {
   }
 
   it('posts a reviewer', () => {
-    return postReviewer(aa2Reviewer)
-      .then(reviewer => {
-        expect(reviewer).toEqual({
-          _id: expect.any(Object),
-          __v: 0,
-          ...reviewer
-        });
+    return postReviewer(aa2Reviewer).then(reviewer => {
+      expect(reviewer).toEqual({
+        _id: expect.any(Object),
+        __v: 0,
+        ...reviewer
       });
+    });
   });
 
   it('gets all reviewers', () => {
@@ -106,9 +105,7 @@ describe('reviewer api', () => {
       postReviewer(aa2Reviewer)
     ])
       .then(() => {
-        return request
-          .get('/api/reviewers')
-          .expect(200);
+        return request.get('/api/reviewers').expect(200);
       })
       .then(({ body }) => {
         expect(body.length).toBe(3);
@@ -122,15 +119,44 @@ describe('reviewer api', () => {
   });
 
   it('gets reviewer by id', () => {
-    return postReviewer(aa2Reviewer)
-      .then(reviewer => {
-        return request
-          .get(`/api/reviewers/${reviewer._id}`)
-          .expect(200)
-          .then(({ body }) => {
-            expect(body).toEqual(reviewer);
-          });
-      });
+    return postReview(aa2Review).then(review => {
+      return request
+        .get(`/api/reviewers/${review.reviewer}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body).toMatchInlineSnapshot(
+            {
+              _id: expect.any(String),
+              reviews: [
+                {
+                  _id: expect.any(String),
+                  film: {
+                    _id: expect.any(String)
+                  }
+                }
+              ]
+            },
+            `
+            Object {
+              "_id": Any<String>,
+              "company": "Evil Vampire",
+              "name": "Boss Person",
+              "reviews": Array [
+                Object {
+                  "_id": Any<String>,
+                  "film": Object {
+                    "_id": Any<String>,
+                    "title": "AA2 Alchemist",
+                  },
+                  "rating": 4,
+                  "review": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                },
+              ],
+            }
+          `
+          );
+        });
+    });
   });
 
   it('modifies the reviewer', () => {
@@ -150,9 +176,7 @@ describe('reviewer api', () => {
   it('finds and deletes by id', () => {
     return postReviewer(aa2Reviewer)
       .then(reviewer => {
-        return request
-          .delete(`/api/reviewers/${reviewer._id}`)
-          .expect(200);
+        return request.delete(`/api/reviewers/${reviewer._id}`).expect(200);
       })
       .then(() => {
         return request
@@ -164,6 +188,3 @@ describe('reviewer api', () => {
       });
   });
 });
-
-
-
