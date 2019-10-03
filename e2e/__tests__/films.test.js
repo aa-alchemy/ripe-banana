@@ -173,35 +173,36 @@ describe('film api', () => {
   });
 
   it('gets film by its id', () => {
-    return postReview(aa2Review).then(review => {
-      return request
-        .get(`/api/films/${review.film}`)
-        .expect(200)
-        .then(({ body }) => {
-          expect(body).toMatchInlineSnapshot(
-            {
-              _id: expect.any(String),
-              cast: [
-                {
-                  _id: expect.any(String),
-                  actor: {
-                    _id: expect.any(String)
+    return postReview(aa2Review)
+      .then(review => {
+        return request
+          .get(`/api/films/${review.film}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body).toMatchInlineSnapshot(
+              {
+                _id: expect.any(String),
+                cast: [
+                  {
+                    _id: expect.any(String),
+                    actor: {
+                      _id: expect.any(String)
+                    }
                   }
-                }
-              ],
-              reviews: [
-                {
-                  _id: expect.any(String),
-                  reviewer: {
-                    _id: expect.any(String)
+                ],
+                reviews: [
+                  {
+                    _id: expect.any(String),
+                    reviewer: {
+                      _id: expect.any(String)
+                    }
                   }
+                ],
+                studio: {
+                  _id: expect.any(String)
                 }
-              ],
-              studio: {
-                _id: expect.any(String)
-              }
-            },
-            `
+              },
+              `
             Object {
               "_id": Any<String>,
               "cast": Array [
@@ -233,9 +234,9 @@ describe('film api', () => {
               "title": "AA2 Alchemist",
             }
           `
-          );
-        });
-    });
+            );
+          });
+      });
   });
 
   it('finds by id and deletes', () => {
