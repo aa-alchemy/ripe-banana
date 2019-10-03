@@ -99,7 +99,9 @@ describe('studio api', () => {
   it('deletes studio', () => {
     return postStudio(aa2Studio)
       .then(studio => {
-        return request.delete(`/api/studios/${studio._id}`).expect(200);
+        return request
+          .delete(`/api/studios/${studio._id}`)
+          .expect(200);
       })
       .then(() => {
         return request
