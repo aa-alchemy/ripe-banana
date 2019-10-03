@@ -5,9 +5,9 @@
 ### Author: Antonella Gutierrez
 
 ### Links and Resources
-* [submission PR](https://github.com/antonella-401-advanced-javascript/lab-07/pull/1)
-* [travis](https://travis-ci.com/antonella-401-advanced-javascript/lab-07/builds/129189284)
-* [back-end](https://lab-07-dogs.herokuapp.com/)
+* [submission PR](https://github.com/aa-alchemy/ripe-banana/pull/2)
+* [travis](https://travis-ci.com/aa-alchemy/ripe-banana/builds/130328984)
+* [back-end](http://anto-ripe-banana.herokuapp.com/)
 
 ###  API Server
 * routing
