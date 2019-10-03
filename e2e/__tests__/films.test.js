@@ -154,15 +154,69 @@ describe('film api', () => {
   });
 
   it('gets film by its id', () => {
-    return postFilm(aa2Film)
-      .then(film => {
-        return request
-          .get(`/api/films/${film._id}`)
-          .expect(200)
-          .then(({ body }) => {
-            expect(body).toEqual(film);
-          });
-      });
+    return postReview(aa2Review).then(review => {
+      return request
+        .get(`/api/films/${review.film}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body).toMatchInlineSnapshot(
+            {
+              _id: expect.any(String),
+              cast: [
+                {
+                  _id: expect.any(String),
+                  actor: {
+                    _id: expect.any(String)
+                  }
+                }
+              ],
+              reviews: [
+                {
+                  _id: expect.any(String),
+                  reviewer: {
+                    _id: expect.any(String)
+                  }
+                }
+              ],
+              studio: {
+                _id: expect.any(String)
+              }
+            },
+            `
+            Object {
+              "_id": Any<String>,
+              "cast": Array [
+                Object {
+                  "_id": Any<String>,
+                  "actor": Object {
+                    "_id": Any<String>,
+                    "name": "Antonella",
+                  },
+                  "role": "Lead Alchemist",
+                },
+              ],
+              "released": 2019,
+              "reviews": Array [
+                Object {
+                  "_id": Any<String>,
+                  "rating": 4,
+                  "review": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "reviewer": Object {
+                    "_id": Any<String>,
+                    "name": "testing",
+                  },
+                },
+              ],
+              "studio": Object {
+                "_id": Any<String>,
+                "name": "AA2",
+              },
+              "title": "AA2 Alchemist",
+            }
+          `
+          );
+        });
+    });
   });
 
   it('finds by id and deletes', () => {
