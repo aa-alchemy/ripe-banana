@@ -150,6 +150,25 @@ describe('film api', () => {
       })
       .then(({ body }) => {
         expect(body.length).toBe(3);
+        expect(body[0]).toMatchInlineSnapshot(
+          {
+            _id: expect.any(String),
+            studio: {
+              _id: expect.any(String)
+            }
+          },
+          `
+          Object {
+            "_id": Any<String>,
+            "released": 2019,
+            "studio": Object {
+              "_id": Any<String>,
+              "name": "AA2",
+            },
+            "title": "AA2 Alchemist",
+          }
+        `
+        );
       });
   });
 
