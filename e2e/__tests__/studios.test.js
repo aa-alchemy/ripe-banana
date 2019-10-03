@@ -53,27 +53,30 @@ describe('studio api', () => {
   });
 
   it('gets studio by id', () => {
-    return postStudio(aa2Studio).then(studio => {
-      return request
-        .post(`/api/films`)
-        .send({
-          title: 'Testing',
-          studio: studio._id,
-          released: 2019
-        })
-        .expect(200)
-        .then(() => {
-          return request.get(`/api/studios/${studio._id}`).expect(200);
-        })
-        .then(({ body }) => {
-          expect(body).toMatchInlineSnapshot(
-            {
-              _id: expect.any(String),
-              films: [{
-                _id: expect.any(String) 
-              }]
-            },
-            `
+    return postStudio(aa2Studio)
+      .then(studio => {
+        return request
+          .post(`/api/films`)
+          .send({
+            title: 'Testing',
+            studio: studio._id,
+            released: 2019
+          })
+          .expect(200)
+          .then(() => {
+            return request
+              .get(`/api/studios/${studio._id}`)
+              .expect(200);
+          })
+          .then(({ body }) => {
+            expect(body).toMatchInlineSnapshot(
+              {
+                _id: expect.any(String),
+                films: [{
+                  _id: expect.any(String) 
+                }]
+              },
+              `
             Object {
               "__v": 0,
               "_id": Any<String>,
@@ -91,9 +94,9 @@ describe('studio api', () => {
               "name": "AA2",
             }
           `
-          );
-        });
-    });
+            );
+          });
+      });
   });
 
   it('deletes studio', () => {
@@ -109,6 +112,30 @@ describe('studio api', () => {
           .expect(200)
           .then(({ body }) => {
             expect(body.length).toBe(0);
+          });
+      });
+  });
+
+  it('cannot delete a studio in use', () => {
+    return postStudio(aa2Studio)
+      .then(studio => {
+        return request
+          .post(`/api/films`)
+          .send({
+            title: 'Testing',
+            studio: studio._id,
+            released: 2019
+          })
+          .expect(200)
+          .then(() => {
+            return request
+              .get(`/api/studios/${studio._id}`)
+              .expect(200);
+          })
+          .then(studio => {
+            return request
+              .delete(`/api/studios/${studio._id}`)
+              .expect(400);
           });
       });
   });
