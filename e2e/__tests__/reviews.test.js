@@ -111,9 +111,7 @@ describe('review api', () => {
       postReview(aa2Review)
     ])
       .then(() => {
-        return request
-          .get('/api/reviews')
-          .expect(200);
+        return request.get('/api/reviews').expect(200);
       })
       .then(({ body }) => {
         expect(body.length).toBe(3);
@@ -121,23 +119,40 @@ describe('review api', () => {
   });
 
   it('gets review by an id', () => {
-    return postReview(aa2Review)
-      .then(review => {
-        return request
-          .get(`/api/reviews/${review._id}`)
-          .expect(200)
-          .then(({ body }) => {
-            expect(body).toEqual(review);
-          });
-      });
+    return postReview(aa2Review).then(review => {
+      return request
+        .get(`/api/reviews/${review._id}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body).toMatchInlineSnapshot(
+            {
+              _id: expect.any(String),
+              film: {
+                _id: expect.any(String)
+              },
+              reviewer: expect.any(String)
+            },
+            `
+            Object {
+              "_id": Any<String>,
+              "film": Object {
+                "_id": Any<String>,
+                "title": "AA2 Alchemist",
+              },
+              "rating": 4,
+              "review": "adufhsiodhJLBZXc uogdoubjkadb",
+              "reviewer": Any<String>,
+            }
+          `
+          );
+        });
+    });
   });
 
   it('finds by id and deletes', () => {
     return postReview(aa2Review)
       .then(review => {
-        return request 
-          .delete(`/api/reviews/${review._id}`)
-          .expect(200);
+        return request.delete(`/api/reviews/${review._id}`).expect(200);
       })
       .then(() => {
         return request
