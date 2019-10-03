@@ -31,10 +31,58 @@ describe('film api', () => {
     ]
   };
 
+  const aa2Reviewer = {
+    name: 'testing',
+    company: 'test company'
+  };
+
+  const aa2Review = {
+    rating: 4,
+    reviewer: [],
+    review: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    film: []
+  };
+
   const aa2Actor = {
     name: 'Antonella',
     pob: 'Colombia'
   };
+
+  function postReview(aa2Review) {
+    return request
+      .post('/api/reviewers')
+      .send(aa2Reviewer)
+      .expect(200)
+      .then(({ body }) => {
+        aa2Review.reviewer = body._id;
+        return request
+          .post('/api/studios')
+          .send(aa2Studio)
+          .expect(200)
+          .then(({ body }) => {
+            aa2Film.studio[0] = body._id;
+            return request
+              .post('/api/actors')
+              .send(aa2Actor)
+              .expect(200)
+              .then(({ body }) => {
+                aa2Film.cast[0].actor = body._id;
+                return request
+                  .post('/api/films')
+                  .send(aa2Film)
+                  .expect(200)
+                  .then(({ body }) => {
+                    aa2Review.film = body._id;
+                    return request
+                      .post('/api/reviews')
+                      .send(aa2Review)
+                      .expect(200)
+                      .then(({ body }) => body);
+                  });
+              });
+          });
+      });
+  }
 
   function postFilm(aa2Film) {
     return request
@@ -90,6 +138,7 @@ describe('film api', () => {
       );
     });
   });
+
   it('gets all films', () => {
     return Promise.all([
       postFilm(aa2Film),
@@ -103,16 +152,19 @@ describe('film api', () => {
         expect(body.length).toBe(3);
       });
   });
+
   it('gets film by its id', () => {
-    return postFilm(aa2Film).then(film => {
-      return request
-        .get(`/api/films/${film._id}`)
-        .expect(200)
-        .then(({ body }) => {
-          expect(body).toEqual(film);
-        });
-    });
+    return postFilm(aa2Film)
+      .then(film => {
+        return request
+          .get(`/api/films/${film._id}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body).toEqual(film);
+          });
+      });
   });
+
   it('finds by id and deletes', () => {
     return postFilm(aa2Film)
       .then(film => {
